@@ -162,7 +162,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/api/users/id/3c0e9775-ce4d-4905-9124-99e616e174a2",
+							"raw": "localhost:8080/api/users/id/rrrr",
 							"host": [
 								"localhost"
 							],
@@ -171,7 +171,7 @@
 								"api",
 								"users",
 								"id",
-								"3c0e9775-ce4d-4905-9124-99e616e174a2"
+								"rrrr"
 							]
 						}
 					},
