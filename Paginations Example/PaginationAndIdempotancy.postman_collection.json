@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "1446850d-b309-4e34-9efc-4d02e81fba00",
+		"name": "PaginationAndIdempotancy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15955001"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "add-user",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"userId\": \"user123\",\r\n    \"username\": \"aman_k\",\r\n    \"email\": \"aman.kumar@example.com\",\r\n    \"password\": \"Aman@123\",\r\n    \"city\": \"Delhi\"\r\n  },\r\n  {\r\n    \"userId\": \"usr789\",\r\n    \"username\": \"priya_s\",\r\n    \"email\": \"priya.singh@example.com\",\r\n    \"password\": \"Priya@456\",\r\n    \"city\": \"Mumbai\"\r\n  },\r\n  {\r\n    \"userId\": \"u567\",\r\n    \"username\": \"rahul_dev\",\r\n    \"email\": \"rahul.dev@example.com\",\r\n    \"password\": \"Rahul#789\",\r\n    \"city\": \"Bangalore\"\r\n  },\r\n  {\r\n    \"userId\": \"testUser999\",\r\n    \"username\": \"sneha_t\",\r\n    \"email\": \"sneha.t@example.com\",\r\n    \"password\": \"Sneha$2025\",\r\n    \"city\": \"Hyderabad\"\r\n  },\r\n  {\r\n    \"userId\": \"guest101\",\r\n    \"username\": \"arjun_m\",\r\n    \"email\": \"arjun.m@example.com\",\r\n    \"password\": \"Arjun@!987\",\r\n    \"city\": \"Pune\"\r\n  },\r\n  {\r\n    \"userId\": \"u101\",\r\n    \"username\": \"meena_r\",\r\n    \"email\": \"meena.rani@example.com\",\r\n    \"password\": \"Meena@1234\",\r\n    \"city\": \"Chennai\"\r\n  },\r\n  {\r\n    \"userId\": \"usr2025\",\r\n    \"username\": \"vikas_j\",\r\n    \"email\": \"vikas.jha@example.com\",\r\n    \"password\": \"Vikas#2025\",\r\n    \"city\": \"Kolkata\"\r\n  },\r\n  {\r\n    \"userId\": \"alpha007\",\r\n    \"username\": \"neha_p\",\r\n    \"email\": \"neha.patel@example.com\",\r\n    \"password\": \"Neha$007\",\r\n    \"city\": \"Ahmedabad\"\r\n  },\r\n  {\r\n    \"userId\": \"demoX55\",\r\n    \"username\": \"ravi_s\",\r\n    \"email\": \"ravi.sharma@example.com\",\r\n    \"password\": \"Ravi@X55\",\r\n    \"city\": \"Jaipur\"\r\n  },\r\n  {\r\n    \"userId\": \"newUser44\",\r\n    \"username\": \"kiran_d\",\r\n    \"email\": \"kiran.das@example.com\",\r\n    \"password\": \"Kiran#44\",\r\n    \"city\": \"Lucknow\"\r\n  },\r\n  {\r\n    \"userId\": \"test900\",\r\n    \"username\": \"anil_m\",\r\n    \"email\": \"anil.mehra@example.com\",\r\n    \"password\": \"Anil@900\",\r\n    \"city\": \"Bhopal\"\r\n  }\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/users/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"add"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getall",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/users?page=1&size=3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upadate",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "If-Match",
+								"value": "\"0\"",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"city\":\"bhind\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/users/id/rrrr",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"id",
+								"rrrr"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "upadate",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "If-Match",
+										"value": "\"0\"",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"city\":\"bhind\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/users/id/rrrr",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users",
+										"id",
+										"rrrr"
+									]
+								}
+							},
+							"_postman_previewlanguage": "",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "byId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/users/id/3c0e9775-ce4d-4905-9124-99e616e174a2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"id",
+								"3c0e9775-ce4d-4905-9124-99e616e174a2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
